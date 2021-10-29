@@ -1,0 +1,495 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "API project for a song database",
+      "version": "0.1",
+      "title": "neals-isdb-app"
+    },
+    "paths": {
+      "/api/register": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model0"
+              },
+              "x-examples": {
+                "application/json": "{\r\n\"username\": \"User\",\r\n\"password\": \"UserPassword\"\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Get confirmation of registration if valid credentials are posted",
+              "schema": {
+                "$ref": "#/definitions/Model1"
+              }
+            },
+            "401": {
+              "description": "Failure message if a username or password is not provided at registration",
+              "schema": {
+                "$ref": "#/definitions/Model1"
+              }
+            }
+          }
+        }
+      },
+      "/api/login": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model2"
+              },
+              "x-examples": {
+                "application/json": "{\r\n\"username\": \"User\",\r\n\"password\": \"UserPassword\"\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Response messagage of successful login and access token",
+              "schema": {
+                "$ref": "#/definitions/Model3"
+              }
+            },
+            "401": {
+              "description": "Response message for missing authorised credentials",
+              "schema": {
+                "$ref": "#/definitions/Model4"
+              }
+            }
+          }
+        }
+      },
+      "/api/tracks/:id": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Get info about a specific track based on track id params",
+              "schema": {
+                "$ref": "#/definitions/Model5"
+              }
+            },
+            "401": {
+              "description": "Get message of authorization failure",
+              "schema": {
+                "type": "string"
+              }
+            },
+            "404": {
+              "description": "Get message response that no tracks found with matching track id",
+              "schema": {
+                "$ref": "#/definitions/Model6"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/api/genres": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Get an array of all genre objects",
+              "schema": {
+                "$ref": "#/definitions/Model7"
+              }
+            },
+            "401": {
+              "description": "Get message of authorization failure",
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/api/albums/:id": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Get info about a specific album based on album id params",
+              "schema": {
+                "$ref": "#/definitions/Model8"
+              }
+            },
+            "401": {
+              "description": "Get message of authorization failure",
+              "schema": {
+                "type": "string"
+              }
+            },
+            "404": {
+              "description": "Get message response that no albums found with matching album id",
+              "schema": {
+                "$ref": "#/definitions/Model9"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/api/tracks": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model20"
+              },
+              "x-examples": {
+                "application/json": "{\r\n    \"Name\": \"The Four Horsemen\",\r\n    \"AlbumId\": \"35\",\r\n    \"GenreId\": \"3\",\r\n    \"Composer\": \"Metallica\",\r\n    \"Milliseconds\": \"112700\",\r\n    \"Bytes\": \"752100\",\r\n    \"unitPrice\": \"0.99\"\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Get the info of the track posted to api",
+              "schema": {
+                "$ref": "#/definitions/Model21"
+              }
+            },
+            "400": {
+              "description": "Get error message stating the missing and required body track information",
+              "schema": {
+                "$ref": "#/definitions/Model22"
+              }
+            },
+            "401": {
+              "description": "Get message of authorization failure",
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/api/artists/:id": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Get info about a specific artist based on artist id params",
+              "schema": {
+                "$ref": "#/definitions/Model23"
+              }
+            },
+            "401": {
+              "description": "Get message of authorization failure",
+              "schema": {
+                "type": "string"
+              }
+            },
+            "404": {
+              "description": "Get message response that no artist found with matching artist id",
+              "schema": {
+                "$ref": "#/definitions/Model24"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      }
+    },
+    "securityDefinitions": {
+      "Secured": {
+        "type": "oauth2",
+        "authorizationUrl": "https://example.com",
+        "flow": "implicit",
+        "scopes": {}
+      }
+    },
+    "definitions": {
+      "Model0": {
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Model1": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Model2": {
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Model3": {
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "Model4": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Model5": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "TrackId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "AlbumId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MediaTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "GenreId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Composer": {
+            "type": "string"
+          },
+          "Milliseconds": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Bytes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UnitPrice": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Model6": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Array": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "GenreId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        }
+      },
+      "Model7": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Array"
+        }
+      },
+      "Model8": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "AlbumId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Title": {
+            "type": "string"
+          },
+          "ArtistId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model9": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Model20": {
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "AlbumId": {
+            "type": "string"
+          },
+          "GenreId": {
+            "type": "string"
+          },
+          "Composer": {
+            "type": "string"
+          },
+          "Milliseconds": {
+            "type": "string"
+          },
+          "Bytes": {
+            "type": "string"
+          },
+          "unitPrice": {
+            "type": "string"
+          }
+        }
+      },
+      "Model21": {
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "AlbumId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "GenreId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Composer": {
+            "type": "string"
+          },
+          "Milliseconds": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Bytes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model22": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Model23": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "ArtistId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string"
+          }
+        }
+      },
+      "Model24": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
