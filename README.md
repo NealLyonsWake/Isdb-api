@@ -58,3 +58,4 @@
 ### Deployment
 1. This app has been deployed to Heroku via the Git repo.
 2. An environment was setup to hide the MongoDB access credentials to the remote cluster. This was enabled using the dotenv package and configured once deployed using Heroku's CLI.
+3. Git branch created for deployment called "deploy".
