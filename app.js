@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // index route
-app.use('/api', indexRouter);
+app.use('/', indexRouter);
 
 // user route for register and login
 app.use('/api', usersRouter);

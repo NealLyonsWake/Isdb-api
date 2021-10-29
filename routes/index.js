@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Neal`s BackEnd' });
+  res.render('index', { title: 'Neal`s ISDB API' });
 });
 
 module.exports = router;
