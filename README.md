@@ -18,7 +18,7 @@
 
 ## Documented Endpoints
 1. The endpoints are required to be apprpriately documented using Swagger. The swagger.json file with the documented endpoints is available in this repo.
-2. Use the swagger.json file in Swagger to confirm the required data for requests and the respective responses.
+2. End points are documented in Swagger [here.](https://app.swaggerhub.com/apis/supernovaboy/neals-isdb-api/0.1)
 
 ## Approach Taken
 ### Planning
