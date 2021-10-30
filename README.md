@@ -44,7 +44,7 @@
 ### Routes
 1. Express was used to setup all requests to each endpoint.
 2. The `routes` directory contains the home, user authentication and song database routes.
-3. The routers were exported to be used when called from the dependant index.js file; the users.js file was also used in the songs.js file to authenticate the user when calling the relevant endpoints.
+3. The routers were exported to be used when called from the dependant app.js file; the users.js file was also used in the songs.js file to authenticate the user when calling the relevant endpoints.
 4. Each route and method required were tested to confirm correct data responses prior to setting up user authentication.
 
 ### Authentication
