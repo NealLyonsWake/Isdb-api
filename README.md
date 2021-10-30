@@ -53,7 +53,7 @@
 3. Authentication was setup in the same way as previous assignments in classes, although it was still not fully understood the full workings on the interactions between each authentication package. Further study and practice is required to fully understand the concepts here.
 4. The strategy is implemented using passport to confirm the token is for a real user. 
 5. The code is confirgured that the password is encripted with `salt` and `hash` on register and therefore not exposed in the database.
-6. Each request made to the songs.js routes will require a token as part of the authorization header in the request. The token is obtained from a user registering and logging in whtere the token will be displayed in the repose. In order to use the token, `jwt` will need to be appended to the start of the token, seperated with a space; i.e. `jwt your_token_here`.
+6. Each request made to the songs.js routes will require a token as part of the authorization header in the request. The token is obtained from a user registering and logging in where the token will be displayed in the response. In order to use the token, `jwt` will need to be appended to the start of the token in the request header, seperated with a space; i.e. `jwt YOUR_TOKEN_HERE`.
 
 ### Deployment
 1. This app has been deployed to Heroku via the Git repo.
