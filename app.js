@@ -5,12 +5,15 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const songsRouter = require('./routes/songs');
 
 const app = express();
+
+const swaggerDocument = require('./swagger.json');
 
 const mongooseURI = process.env.MONGOOSE_URI
 mongoose.connect(
@@ -35,6 +38,9 @@ app.use('/api', usersRouter);
 
 // songs db route
 app.use('/api', songsRouter);
+
+// documentation
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
