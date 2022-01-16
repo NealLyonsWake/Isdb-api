@@ -7,14 +7,13 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors')
 const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const songsRouter = require('./routes/songs');
 
 const app = express();
-
-const swaggerDocument = require('./swagger.json');
 
 const mongooseURI = process.env.MONGOOSE_URI
 mongoose.connect(
