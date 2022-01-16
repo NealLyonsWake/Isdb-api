@@ -18,7 +18,7 @@
 
 ## Documented Endpoints
 1. The endpoints are required to be apprpriately documented using Swagger. The swagger.json file with the documented endpoints is available in this repo.
-2. End points are documented in Swagger [here.](https://app.swaggerhub.com/apis/supernovaboy/neals-isdb-api/0.1)
+2. End points are documented in Swagger [here.](https://neals-isdb-app.herokuapp.com/documentation/)
 
 ## Approach Taken
 ### Planning
@@ -44,7 +44,7 @@
 ### Routes
 1. Express was used to setup all requests to each endpoint.
 2. The `routes` directory contains the home, user authentication and song database routes.
-3. The routers were exported to be used when called from the dependant index.js file; the users.js file was also used in the songs.js file to authenticate the user when calling the relevant endpoints.
+3. The routers were exported to be used when called from the dependant app.js file; the users.js file was also used in the songs.js file to authenticate the user when calling the relevant endpoints.
 4. Each route and method required were tested to confirm correct data responses prior to setting up user authentication.
 
 ### Authentication
@@ -53,9 +53,8 @@
 3. Authentication was setup in the same way as previous assignments in classes, although it was still not fully understood the full workings on the interactions between each authentication package. Further study and practice is required to fully understand the concepts here.
 4. The strategy is implemented using passport to confirm the token is for a real user. 
 5. The code is confirgured that the password is encripted with `salt` and `hash` on register and therefore not exposed in the database.
-6. Each request made to the songs.js routes will require a token as part of the authorization header in the request. The token is obtained from a user registering and logging in whtere the token will be displayed in the repose. In order to use the token, `jwt` will need to be appended to the start of the token, seperated with a space; i.e. `jwt your_token_here`.
+6. Each request made to the songs.js routes will require a token as part of the authorization header in the request. The token is obtained from a user registering and logging in where the token will be displayed in the response. In order to use the token, `jwt` will need to be appended to the start of the token in the request header, seperated with a space; i.e. `jwt YOUR_TOKEN_HERE`.
 
 ### Deployment
 1. This app has been deployed to Heroku via the Git repo.
 2. An environment was setup to hide the MongoDB access credentials to the remote cluster. This was enabled using the dotenv package and configured once deployed using Heroku's CLI.
-3. Git branch created for deployment called "deploy".

@@ -302,105 +302,119 @@
           "username": {
             "type": "string"
           },
-          "password": {
-            "type": "string"
+          "404": {
+            "description": "Get message response that no artist found with matching artist id",
+            "schema": {
+              "$ref": "#/definitions/Model24"
+            }
           }
+        },
+        "security": [
+          {
+            "Secured": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Secured": {
+      "type": "oauth2",
+      "authorizationUrl": "https://example.com",
+      "flow": "implicit",
+      "scopes": {}
+    }
+  },
+  "definitions": {
+    "Model0": {
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
         }
-      },
-      "Model1": {
-        "properties": {
-          "message": {
-            "type": "string"
-          }
+      }
+    },
+    "Model1": {
+      "properties": {
+        "message": {
+          "type": "string"
         }
-      },
-      "Model2": {
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          }
+      }
+    },
+    "Model2": {
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
         }
-      },
-      "Model3": {
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "token": {
-            "type": "string"
-          }
+      }
+    },
+    "Model3": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
         }
-      },
-      "Model4": {
-        "properties": {
-          "message": {
-            "type": "string"
-          }
+      }
+    },
+    "Model4": {
+      "properties": {
+        "message": {
+          "type": "string"
         }
-      },
-      "Model5": {
-        "properties": {
-          "_id": {
-            "type": "string"
-          },
-          "TrackId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "AlbumId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "MediaTypeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "GenreId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Composer": {
-            "type": "string"
-          },
-          "Milliseconds": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Bytes": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "UnitPrice": {
-            "type": "number",
-            "format": "double"
-          }
+      }
+    },
+    "Model5": {
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "TrackId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "AlbumId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MediaTypeId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "GenreId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Composer": {
+          "type": "string"
+        },
+        "Milliseconds": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Bytes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "UnitPrice": {
+          "type": "number",
+          "format": "double"
         }
-      },
-      "Model6": {
-        "properties": {
-          "message": {
-            "type": "string"
-          }
-        }
-      },
-      "Array": {
-        "properties": {
-          "_id": {
-            "type": "string"
-          },
-          "GenreId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
+      }
+    },
+    "Model6": {
+      "properties": {
+        "message": {
+          "type": "string"
         }
       },
       "Model7": {
@@ -408,120 +422,126 @@
         "items": {
           "$ref": "#/components/schemas/Array"
         }
-      },
-      "Model8": {
-        "properties": {
-          "_id": {
-            "type": "string"
-          },
-          "AlbumId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "ArtistId": {
-            "type": "integer",
-            "format": "int32"
-          }
+      }
+    },
+    "Model7": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Array"
+      }
+    },
+    "Model8": {
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "AlbumId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "ArtistId": {
+          "type": "integer",
+          "format": "int32"
         }
-      },
-      "Model9": {
-        "properties": {
-          "message": {
-            "type": "string"
-          }
+      }
+    },
+    "Model9": {
+      "properties": {
+        "message": {
+          "type": "string"
         }
-      },
-      "Model20": {
-        "properties": {
-          "Name": {
-            "type": "string"
-          },
-          "AlbumId": {
-            "type": "string"
-          },
-          "GenreId": {
-            "type": "string"
-          },
-          "Composer": {
-            "type": "string"
-          },
-          "Milliseconds": {
-            "type": "string"
-          },
-          "Bytes": {
-            "type": "string"
-          },
-          "unitPrice": {
-            "type": "string"
-          }
+      }
+    },
+    "Model20": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "AlbumId": {
+          "type": "string"
+        },
+        "GenreId": {
+          "type": "string"
+        },
+        "Composer": {
+          "type": "string"
+        },
+        "Milliseconds": {
+          "type": "string"
+        },
+        "Bytes": {
+          "type": "string"
+        },
+        "unitPrice": {
+          "type": "string"
         }
-      },
-      "Model21": {
-        "properties": {
-          "Name": {
-            "type": "string"
-          },
-          "AlbumId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "GenreId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Composer": {
-            "type": "string"
-          },
-          "Milliseconds": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Bytes": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "unitPrice": {
-            "type": "number",
-            "format": "double"
-          },
-          "_id": {
-            "type": "string"
-          },
-          "__v": {
-            "type": "integer",
-            "format": "int32"
-          }
+      }
+    },
+    "Model21": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "AlbumId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "GenreId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Composer": {
+          "type": "string"
+        },
+        "Milliseconds": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Bytes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "unitPrice": {
+          "type": "number",
+          "format": "double"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
         }
-      },
-      "Model22": {
-        "properties": {
-          "message": {
-            "type": "string"
-          }
+      }
+    },
+    "Model22": {
+      "properties": {
+        "message": {
+          "type": "string"
         }
-      },
-      "Model23": {
-        "properties": {
-          "_id": {
-            "type": "string"
-          },
-          "ArtistId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "Name": {
-            "type": "string"
-          }
+      }
+    },
+    "Model23": {
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "ArtistId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Name": {
+          "type": "string"
         }
-      },
-      "Model24": {
-        "properties": {
-          "message": {
-            "type": "string"
-          }
+      }
+    },
+    "Model24": {
+      "properties": {
+        "message": {
+          "type": "string"
         }
       }
     },
